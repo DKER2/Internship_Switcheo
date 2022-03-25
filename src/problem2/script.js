@@ -3,7 +3,7 @@ function toast({type = "", title="", message="", duration = 3000}){
     const toast = document.createElement("div");
     const autoRemove = setTimeout(function() {
         toastContainer.removeChild(toast);
-    },duration + 1000)
+    },duration + 500)
     if(toastContainer){
         toast.classList.add("toast", `toast--${type}`);
         let icon;
@@ -69,7 +69,7 @@ let inputAddress = document.getElementById("input-address");
             event.target.style.opacity = "0.5";
         }
         else{
-            event.target.style.opacity = "0.7"; //Modifies the css property of the element
+            event.target.style.opacity = "0.8";  //Modifies the css property of the element
         }
         
 })
