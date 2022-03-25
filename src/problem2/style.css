@@ -1,8 +1,132 @@
 body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: flex-start;
+  background-image: url('./ETH-01.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+.form{
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  flex: 1;
+}
+
+.input{
   display: flex;
   flex-direction: row;
+  justify-content: space-around;  
   align-items: center;
-  justify-content: center;
-  min-width: 360px;
-  font-family: Arial, Helvetica, sans-serif;
+}
+.submit{
+  margin-top: 2rem;
+  align-self: center;
+}
+.btn{
+  padding: 20px;
+  font-size: 20px;
+  color: #fff;
+  font-family: Arial;
+  border: 0px solid;
+  border-radius: 10px;
+  box-shadow: 5px 4px rgba(0, 0, 0, 0.2);
+}
+.btn:hover{
+  cursor: pointer;
+  opacity: 0.5;
+}
+.btn--success{
+  background-color: #bac935;
+}
+label{
+  font-size: 18px;
+  font-family:'Times New Roman', Times, serif;
+  color: #fff;
+}
+
+input{
+  border: 0px #fff solid;
+  border-radius: 5px;
+  font-size: 18px;
+  opacity: 0.5;
+}
+
+
+
+
+
+
+#toast {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  z-index: 999999;
+}
+.toast  {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px 0px;
+  border-radius: 2px;
+  margin-top: 10px;
+  min-width: 400px;
+  max-width: 450px;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid;
+  transition: all linear 0.5s;
+  animation: slideLeft ease 1s, fadeOut 1s 2s forwards;
+}
+@keyframes slideLeft{
+  from{
+      opacity: 0.2;
+      transform: translateX(100%);
+  }
+  to{
+      opacity: 1;
+      transform: 0;
+
+  }
+}
+
+@keyframes fadeOut{
+  to{
+      opacity: 0;
+  }
+}
+.toast--success{
+  border-color: rgb(23, 196, 29)
+}
+.toast--error{
+  border-color: red;
+}
+.toast .toast__icon{
+  margin-right: 40px;
+  font-size: 24px;
+}
+
+.toast__icon,
+.toast__close {
+padding: 0 16px;
+}
+.toast__icon--success{
+  color:rgb(17, 224, 100);
+}
+.toast__icon--error{
+  color: red;
+}
+.toast__message {
+  font-size: 14px;
+  color: #888;
+  margin-top: 6px;
+  line-height: 1.5;
+  flex: 1;
+}
+.toast__close {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }

@@ -6,23 +6,33 @@
 
   <!-- You may add more stuff here -->
   <link href="style.css" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/8783dabac5.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
   <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
-    <label for="input-address">ETH Address</label>
-    <input id="input-address" />
-
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
-
-    <label for="input-otp">OTP Authentication</label>
-    <input type="number" id="input-otp" />
-
-    <button>SEND TOKENS</button>
-  </form>
+  <div class="form">
+    <div class="input">
+      <div class="input-address">
+        <label class="input-address__label" for="input-address">ETH Address <i class="fab fa-ethereum" style="opacity:0.5"></i></label>
+        <input type="text" id="input-address" placeholder="0x71C7656EC7ab88b098defB751B7401B5f6d8976F"/>
+      </div>
+      <div class="input-amount">
+        <label class="input-amount__label" for="input-amount">Amount to send <i class="fa-brands fa-ethereum" style="color:rgb(172, 62, 52)"></i></label>
+        <input type="text" id="input-amount" placeholder="100"/>
+      </div>
+      <div class="input-otp">
+        <label class="input-otp__label" for="input-otp">OTP Authentication</label>
+        <input type="text" placeholder="351261" id="input-otp"/>
+      </div>
+    </div>
+    <div class="submit">
+      <button type="button" class="btn btn--success" onclick="sendRequest()">SEND TOKENS</button>
+    </div>
+  </div>
+  <div id="toast">
+  </div>
   <script src="script.js"></script>
 </body>
 
