@@ -53,6 +53,7 @@ input{
   border: 0px #fff solid;
   border-radius: 5px;
   font-size: 18px;
+  min-width: 300px;
   opacity: 0.5;
 }
 

@@ -1,9 +1,26 @@
+
+// Manage Toast Message
+
+function sendRequest(){
+    // Click Send Button will trigger this function and show the toast Message depend on the input
+    let sender = document.getElementById("input-address").value;
+    let amount = document.getElementById("input-amount").value;
+    let otp = document.getElementById("input-otp").value;
+    if(sender==="" || amount==="" || otp===""){
+        showErrorToast();
+    }
+    else{
+        showSuccessToast(sender, amount);
+    }
+
+}
+
 function toast({type = "", title="", message="", duration = 3000}){
     const toastContainer = document.getElementById("toast");
     const toast = document.createElement("div");
     const autoRemove = setTimeout(function() {
         toastContainer.removeChild(toast);
-    },duration + 500)
+    },duration + 100)
     if(toastContainer){
         toast.classList.add("toast", `toast--${type}`);
         let icon;
@@ -34,18 +51,7 @@ function toast({type = "", title="", message="", duration = 3000}){
     toastContainer.appendChild(toast);
     
 }
-function sendRequest(){
-    let sender = document.getElementById("input-address").value;
-    let amount = document.getElementById("input-amount").value;
-    let otp = document.getElementById("input-otp").value;
-    if(sender==="" || amount==="" || otp===""){
-        showErrorToast();
-    }
-    else{
-        showSuccessToast(sender, amount);
-    }
 
-}
 function showSuccessToast(sender, amount){
     toast({
         type: "success",
@@ -63,6 +69,15 @@ function showErrorToast(){
     })
 }
 
+
+
+
+
+
+//Mange Input Change 
+
+
+// Input Box effect
 let inputAddress = document.getElementById("input-address");
     inputAddress.addEventListener("input", (event)=>{
         if(event.target.value===""){
@@ -74,7 +89,7 @@ let inputAddress = document.getElementById("input-address");
         
 })
 
-
+// Input Box effect
 let inputAmount = document.getElementById("input-amount");
     inputAmount.addEventListener("input", (event)=>{
         if(event.target.value===""){
@@ -85,7 +100,7 @@ let inputAmount = document.getElementById("input-amount");
         }
         
 })
-
+// Input Box effect
 let inputOtp = document.getElementById("input-otp");
     inputOtp.addEventListener("input", (event)=>{
         if(event.target.value===""){
